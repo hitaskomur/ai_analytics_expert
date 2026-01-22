@@ -30,7 +30,7 @@ It analyzes structured data using an LLM and returns actionable insights in JSON
 ---
 
 ## 📁 Project Structure
-
+```
 .
 ├── fastapi_v1.py # FastAPI application
 ├── database/
@@ -40,7 +40,7 @@ It analyzes structured data using an LLM and returns actionable insights in JSON
 ├── pyproject.toml
 ├── uv.lock
 └── README.md
-
+```
 
 ---
 
@@ -52,13 +52,14 @@ Create a `.env` file locally or set variables in Render:
 GROQ_API_KEY=your_groq_api_key
 DATABASE_URL=your_database_url
 
-
+```
 
 ## ▶️ Run Locally
+```
 pip install uv
 uv sync
 uv run uvicorn fastapi_v1:app --reload
-
+```
 Open:
 
 http://127.0.0.1:8000/docs
@@ -74,11 +75,12 @@ This endpoint accepts a single query parameter.
 Query Parameter
 
 question (string) – The analysis question
-
+```
 Example (cURL)
 curl -X POST "http://127.0.0.1:8000/analyze?question=Analyze%20last%207%20days%20revenue"
-
+```
 Example (Python)
+```
 import requests
 
 url = "http://127.0.0.1:8000/analyze"
@@ -88,7 +90,7 @@ params = {
 
 response = requests.post(url, params=params)
 print(response.json())
-
+```
 ##📖 API Documentation
 
 FastAPI automatically generates interactive documentation:
